@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-color="lime">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-
+scalable=yes" />
+<title>AKRAJ — Premium Study Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?
+family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root {
+--bg: #F8FAFC; --surface: #FFFFFF; --surface-hover: #F1F5F9;
+--text-main: #0F172A; --text-muted: #64748B; --border: #E2E8F0; --danger: #EF4444;
+--shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+--shadow-md: 0 8px 20px rgba(0,0,0,0.06);
+--shadow-lg: 0 12px 32px rgba(0,0,0,0.08);
+--radius-sm: 12px; --radius-md: 20px; --radius-lg: 28px;
+--theme-golden: #D4AF37; --theme-golden-dark: #B8962E; --theme-golden-glow:
+rgba(212,175,55,0.25); --theme-golden-bg: #FDF8E8;
+--theme-mint: #B7E4C7; --theme-mint-dark: #8FC9A9; --theme-mint-glow: rgba(183,228,199,0.35); -
+-theme-mint-bg: #EAF9EF;
+--theme-sky: #A8DADC; --theme-sky-dark: #7EC1C4; --theme-sky-glow: rgba(168,218,220,0.35); --
+theme-sky-bg: #E5F6F7;
+--theme-lavender: #CDB4DB; --theme-lavender-dark: #B295C4; --theme-lavender-glow:
+rgba(205,180,219,0.35); --theme-lavender-bg: #F4EFF8;
+--theme-babypink: #FFC8DD; --theme-babypink-dark: #F5A8C2; --theme-babypink-glow:
+rgba(255,200,221,0.4); --theme-babypink-bg: #FFF0F5; theme-peach: #F4A261; --theme-peach-dark: #E08B4A; --theme-peach-glow:
+rgba(244,162,97,0.3); --theme-peach-bg: #FEF3E8;
+--theme-forest: #2D6A4F; --theme-forest-dark: #1F4E3A; --theme-forest-glow: rgba(45,106,79,0.25);
+--theme-forest-bg: #E6F2EC;
+--theme-teal: #264653; --theme-teal-dark: #1A333D; --theme-teal-glow: rgba(38,70,83,0.25); --
+theme-teal-bg: #E4EEF2;
+--theme-sage: #E9EDC9; --theme-sage-dark: #CDD4A4; --theme-sage-glow: rgba(233,237,201,0.45);
+--theme-sage-bg: #F8FAEE;
+--theme-coral: #E76F51; --theme-coral-dark: #D15A3E; --theme-coral-glow: rgba(231,111,81,0.3); --
+theme-coral-bg: #FDEDE8;
+--theme-lime: #A3E635; --theme-lime-dark: #84CC16; --theme-lime-glow: rgba(163,230,53,0.25); --
+theme-lime-bg: #F7FEE7;
+--primary: var(--theme-lime); --primary-dark: var(--theme-lime-dark);
+--primary-glow: var(--theme-lime-glow); --primary-bg: var(--theme-lime-bg);
+}
+[data-theme="dark"] {
+--bg: #090C06; --surface: #121A0B; --surface-hover: #1A260F;
+--text-main: #F8FAFC; --text-muted: #94A3B8; --border: #263A0F;
+--shadow-sm: 0 2px 8px rgba(0,0,0,0.3); --shadow-md: 0 8px 20px rgba(0,0,0,0.4); --shadow-lg: 0
+12px 32px rgba(0,0,0,0.5);
+--theme-golden-bg: rgba(212,175,55,0.12); --theme-mint-bg: rgba(183,228,199,0.12);
+--theme-sky-bg: rgba(168,218,220,0.12); --theme-lavender-bg: rgba(205,180,219,0.12);
+--theme-babypink-bg: rgba(255,200,221,0.12); --theme-peach-bg: rgba(244,162,97,0.12);
+--theme-forest-bg: rgba(45,106,79,0.15); --theme-teal-bg: rgba(38,70,83,0.15);
+--theme-sage-bg: rgba(233,237,201,0.10); --theme-coral-bg: rgba(231,111,81,0.12);
+}
+[data-color="golden"]{--primary:var(--theme-golden);--primary-dark:var(--theme-golden-dark);--
+primary-glow:var(--theme-golden-glow);--primary-bg:var(--theme-golden-bg);}
+[data-color="mint"]{--primary:var(--theme-mint);--primary-dark:var(--theme-mint-dark);--primary-
+glow:var(--theme-mint-glow);--primary-bg:var(--theme-mint-bg);}
+[data-color="sky"]{--primary:var(--theme-sky);--primary-dark:var(--theme-sky-dark);--primary-
+glow:var(--theme-sky-glow);--primary-bg:var(--theme-sky-bg);} [data-color="lavender"]{--primary:var(--theme-lavender);--primary-dark:var(--theme-lavender-dark);--
+primary-glow:var(--theme-lavender-glow);--primary-bg:var(--theme-lavender-bg);}
+[data-color="babypink"]{--primary:var(--theme-babypink);--primary-dark:var(--theme-babypink-dark);-
+-primary-glow:var(--theme-babypink-glow);--primary-bg:var(--theme-babypink-bg);}
+[data-color="peach"]{--primary:var(--theme-peach);--primary-dark:var(--theme-peach-dark);--primary-
+glow:var(--theme-peach-glow);--primary-bg:var(--theme-peach-bg);}
+[data-color="forest"]{--primary:var(--theme-forest);--primary-dark:var(--theme-forest-dark);--primary-
+glow:var(--theme-forest-glow);--primary-bg:var(--theme-forest-bg);}
+[data-color="teal"]{--primary:var(--theme-teal);--primary-dark:var(--theme-teal-dark);--primary-
+glow:var(--theme-teal-glow);--primary-bg:var(--theme-teal-bg);}
+[data-color="sage"]{--primary:var(--theme-sage);--primary-dark:var(--theme-sage-dark);--primary-
+glow:var(--theme-sage-glow);--primary-bg:var(--theme-sage-bg);}
+[data-color="coral"]{--primary:var(--theme-coral);--primary-dark:var(--theme-coral-dark);--primary-
+glow:var(--theme-coral-glow);--primary-bg:var(--theme-coral-bg);}
+[data-color="lime"]{--primary:var(--theme-lime);--primary-dark:var(--theme-lime-dark);--primary-
+glow:var(--theme-lime-glow);--primary-bg:var(--theme-lime-bg);}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{font-size:15px;line-height:1.5;scroll-behavior:smooth;}
+/* ✅ SMOOTH BODY */
+body{
+font-family:'Plus Jakarta Sans',sans-serif;
+background-color:var(--bg);
+color:var(--text-main);
+min-height:100vh;
+min-height:100dvh;
+transition:background-color 0.3s,color 0.3s;
+display:flex;
+flex-direction:column;
+overflow-x:hidden;
+padding-bottom:80px; webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+}
+.svg-icon{width:24px;height:24px;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-
+linejoin:round;fill:none;}
+/* ✅ SMOOTH SCREEN TRANSITIONS */
+.screen{display:none;flex-direction:column;min-height:calc(100vh - 80px);padding:0
+16px;animation:screenEnter 0.35s cubic-bezier(0.16,1,0.3,1);}
+.screen.active{display:flex;}
+@keyframes screenEnter{
+from{opacity:0;transform:translateY(15px) scale(0.98);}
+to{opacity:1;transform:translateY(0) scale(1);}
+}
+@media (min-width:600px){.screen{padding:0 24px;}}
+@media (min-width:900px){.screen{padding:0 32px;}}
+.screen-content{flex:1;display:flex;flex-direction:column;max-width:1200px;width:100%;margin:0
+auto;}
+.akraj-logo{display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none;text-
+decoration:none;}
+.logo-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--
+primary) 0%,var(--primary-dark) 100%);display:flex;align-items:center;justify-content:center;box-
+shadow:0 4px 12px var(--primary-glow);position:relative;overflow:hidden;transition:transform 0.2s
+cubic-bezier(0.34,1.56,0.64,1);}
+.logo-
+mark::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-
+gradient(to bottom
+right,rgba(255,255,255,0.4),transparent);transform:rotate(45deg);opacity:0.5;pointer-events:none;}
+.logo-mark svg{width:24px;height:24px;z-index:1;}
+.logo-text{font-size:24px;font-weight:800;letter-spacing:1px;color:var(--text-main);}
+.akraj-logo:hover .logo-mark{transform:rotate(-5deg) scale(1.05);} .splash-logo-large{display:flex;flex-direction:column;align-items:center;gap:16px;animation:pulse
+1.5s infinite;}
+.splash-logo-large .logo-mark{width:80px;height:80px;border-radius:24px;}
+.splash-logo-large .logo-mark svg{width:48px;height:48px;}
+.splash-logo-large .logo-text{font-size:42px;letter-spacing:6px;color:var(--primary);text-shadow:0 0
+30px var(--primary-glow);}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%
+{opacity:0.8;transform:scale(1.03);}}
+#splash-screen{position:fixed;inset:0;z-index:9999;background:var(--bg);justify-
+content:center;align-items:center;min-height:100vh;}
+.splash-subtitle{font-size:14px;color:var(--text-muted);font-weight:600;margin-top:8px;}
+#auth-screen{justify-content:center;align-items:center;}
+.auth-container{width:100%;max-width:420px;display:flex;flex-direction:column;align-
+items:center;margin-top:40px;}
+.auth-subtitle{font-size:15px;color:var(--text-muted);font-weight:500;margin-bottom:32px;}
+.auth-card{width:100%;background:var(--surface);padding:28px;border-radius:var(--radius-
+lg);border:1px solid var(--border);box-shadow:var(--shadow-lg);display:flex;flex-
+direction:column;gap:20px;}
+.input-group{display:flex;flex-direction:column;gap:8px;}
+.input-label{font-size:13px;font-weight:700;color:var(--text-main);margin-left:4px;}
+input[type="text"],input[type="password"],input[type="url"],select{width:100%;height:52px;padding:0
+16px;border:2px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);color:var(--
+text-main);font-family:inherit;font-size:15px;font-weight:500;outline:none;transition:all 0.2s;}
+input:focus,select:focus{border-color:var(--primary);background:var(--surface);box-shadow:0 0 0
+3px var(--primary-glow);}
+.btn-primary{width:100%;height:52px;background:var(--
+primary);color:#0F172A;border:none;border-radius:var(--radius-sm);font-family:inherit;font-
+size:16px;font-weight:800;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-
+content:center;gap:8px;}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 4px
+12px var(--primary-glow);}
+.btn-primary:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+.auth-toggle{text-align:center;font-size:14px;color:var(--text-muted);cursor:pointer;font-
+weight:600;margin-top:8px;} .auth-toggle span{color:var(--text-main);font-weight:800;text-decoration:underline;}
+.app-header{display:flex;align-items:center;justify-content:space-
+between;height:72px;background:var(--bg);margin:0 -16px;padding:0 16px;transition:background-
+color 0.3s;}
+@media (min-width:600px){.app-header{margin:0 -24px;padding:0 24px;}}
+@media (min-width:900px){.app-header{margin:0 -32px;padding:0 32px;height:80px;}}
+.header-left{display:flex;flex-direction:column;gap:2px;}
+.greeting-text{font-size:12px;font-weight:700;color:var(--text-muted);text-
+transform:uppercase;letter-spacing:1px;}
+.header-right{display:flex;gap:12px;align-items:center;}
+.icon-btn{width:44px;height:44px;border-radius:50%;background:var(--surface);border:1px solid
+var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text-
+main);transition:all 0.2s;box-shadow:var(--shadow-sm);}
+.icon-btn:hover{background:var(--surface-hover);}
+.welcome-card{background:linear-gradient(135deg,var(--surface) 0%,var(--primary-bg)
+100%);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px;margin-
+top:24px;margin-bottom:32px;position:relative;overflow:hidden;}
+.welcome-
+card::before{content:'';position:absolute;top:-50px;right:-50px;width:150px;height:150px;background:var(-
+-primary);filter:blur(60px);opacity:0.15;border-radius:50%;}
+.welcome-title{font-size:22px;font-weight:800;color:var(--text-main);margin-bottom:8px;}
+.welcome-title span{color:var(--primary-dark);}
+.welcome-quote{font-size:14px;color:var(--text-muted);font-weight:500;font-style:italic;line-
+height:1.6;border-left:3px solid var(--primary);padding-left:12px;}
+.section-header{font-size:20px;font-weight:800;color:var(--text-main);margin-
+bottom:16px;display:flex;align-items:center;gap:8px;}
+.subject-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;padding-bottom:32px;}
+@media (min-width:600px){.subject-grid{grid-template-columns:repeat(3,1fr);gap:20px;}}
+@media (min-width:900px){.subject-grid{grid-template-columns:repeat(4,1fr);}}
+/* ✅ SMOOTH CARDS */
+.subject-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-
+md);padding:20px;display:flex;flex-direction:column;cursor:pointer;box-shadow:var(--shadow sm);transition:transform 0.25s cubic-bezier(0.16,1,0.3,1),box-shadow 0.25s ease,border-color
+0.25s ease;position:relative;overflow:hidden;will-change:transform;}
+.subject-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--
+primary);}
+.subject-card:active{transform:translateY(-1px) scale(0.98);}
+.subject-icon-box{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-
+content:center;margin-bottom:16px;}
+.subject-icon-box svg{width:28px;height:28px;}
+.subject-name{font-size:17px;font-weight:800;color:var(--text-main);line-height:1.3;margin-
+bottom:6px;}
+.subject-chapters{font-size:13px;font-weight:600;color:var(--text-muted);display:flex;align-
+items:center;gap:6px;margin-top:auto;}
+.detail-header{display:flex;align-items:center;justify-content:space-
+between;height:72px;background:var(--bg);margin:0 -16px;padding:0 16px;transition:background-
+color 0.3s;}
+@media (min-width:600px){.detail-header{margin:0 -24px;padding:0 24px;}}
+@media (min-width:900px){.detail-header{margin:0 -32px;padding:0 32px;height:80px;}}
+.back-btn{width:44px;height:44px;border-radius:50%;background:var(--surface);border:1px solid
+var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-
+main);cursor:pointer;transition:all 0.2s;flex-shrink:0;}
+.back-btn:hover{background:var(--surface-hover);}
+.back-btn:active{transform:scale(0.92);}
+.back-btn svg{width:20px;height:20px;}
+.detail-title{font-size:18px;font-weight:800;text-align:center;flex:1;padding:0 12px;white-
+space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.header-spacer{width:44px;flex-shrink:0;}
+.list-container{display:flex;flex-direction:column;gap:12px;margin-top:24px;max-
+width:900px;margin-left:auto;margin-right:auto;width:100%;}
+/* ✅ SMOOTH LIST CARDS */
+.list-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-
+sm);padding:16px;display:flex;align-items:center;gap:16px;cursor:pointer;box-shadow:var( shadow-sm);transition:transform 0.25s cubic-bezier(0.16,1,0.3,1),box-shadow 0.25s ease,border-
+color 0.25s ease;will-change:transform;animation:fadeUp 0.3s ease both;}
+@keyframes fadeUp
+{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.list-card:hover{border-color:var(--primary);transform:translateX(4px);box-shadow:var(--shadow-
+md);}
+.list-card:active{transform:translateX(2px) scale(0.99);}
+.list-icon-box{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-
+content:center;flex-shrink:0;}
+.list-content{flex:1;display:flex;flex-direction:column;}
+.list-title{font-size:16px;font-weight:700;color:var(--text-main);margin-bottom:2px;}
+.list-subtitle{font-size:13px;font-weight:500;color:var(--text-muted);}
+.list-arrow{width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:var(--
+text-muted);}
+.empty-state{text-align:center;padding:60px 20px;color:var(--text-muted);font-size:15px;font-
+weight:600;background:var(--surface);border:1px dashed var(--border);border-radius:var(--radius-
+md);display:flex;flex-direction:column;align-items:center;gap:16px;}
+.empty-state svg{width:48px;height:48px;opacity:0.4;}
+.app-footer{margin-top:auto;padding:32px 0 24px;display:flex;flex-direction:column;align-
+items:center;gap:12px;text-align:center;border-top:1px solid var(--border);}
+.insta-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--text-
+main);font-size:14px;font-weight:700;padding:8px 16px;border-radius:100px;background:var(--
+surface);border:1px solid var(--border);transition:all 0.2s;box-shadow:var(--shadow-sm);}
+.insta-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);}
+.insta-gradient-icon{width:24px;height:24px;border-radius:6px;background:linear-
+gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888
+100%);display:flex;align-items:center;justify-content:center;}
+.insta-gradient-icon svg{width:14px;height:14px;fill:white;}
+.made-by{font-size:13px;color:var(--text-muted);font-weight:600;}
+.made-by span{background:linear-gradient(90deg,var(--primary),#FF6B9D);-webkit-background-
+clip:text;-webkit-text-fill-color:transparent;font-weight:800;}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:100;height:72px;background:var(--
+surface);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space around;padding:0 8px;box-shadow:0 -4px 12px rgba(0,0,0,0.03);padding-bottom:env(safe-area-
+inset-bottom);}
+.nav-item{display:flex;flex-direction:column;align-items:center;justify-
+content:center;gap:4px;color:var(--text-muted);cursor:pointer;transition:all
+0.2s;flex:1;height:100%;font-size:11px;font-weight:700;}
+.nav-item svg{width:24px;height:24px;stroke-width:2.2;}
+.nav-item.active{color:var(--primary-dark);}
+.nav-item.active svg{color:var(--primary-dark);fill:var(--primary-bg);stroke:var(--primary-dark);}
+.profile-header{display:flex;flex-direction:column;align-items:center;margin-top:32px;margin-
+bottom:32px;}
+.profile-avatar{width:80px;height:80px;border-radius:50%;background:var(--primary-bg);color:var(--
+primary-dark);display:flex;align-items:center;justify-content:center;font-size:32px;font-
+weight:800;margin-bottom:16px;border:3px solid var(--primary);box-shadow:0 0 20px var(--
+primary-glow);}
+.profile-name{font-size:22px;font-weight:800;color:var(--text-main);}
+.profile-badge{font-size:12px;font-weight:700;color:var(--primary-dark);background:var(--primary-
+bg);padding:4px 12px;border-radius:100px;margin-top:8px;}
+.settings-group{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-
+md);overflow:hidden;margin-bottom:24px;}
+.settings-row{display:flex;align-items:center;justify-content:space-between;padding:16px;border-
+bottom:1px solid var(--border);}
+.settings-row:last-child{border-bottom:none;}
+.settings-label{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:700;color:var(--
+text-main);}
+.settings-label svg{width:20px;height:20px;color:var(--text-muted);}
+.color-picker{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+.color-dot{width:40px;height:40px;border-radius:50%;cursor:pointer;border:2px solid
+transparent;transition:transform 0.2s,border-color 0.2s;box-shadow:var(--shadow-
+sm);position:relative;}
+.color-dot:hover{transform:scale(1.12);}
+.color-dot.active{border-color:var(--text-main);box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--
+primary);}
+.btn-danger{width:100%;height:52px;background:rgba(239,68,68,0.1);color:var(--
+danger);border:none;border-radius:var(--radius-sm);font-family:inherit;font-size:16px;font weight:800;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-
+content:center;gap:8px;margin-top:32px;}
+.btn-danger:hover{background:var(--danger);color:white;}
+.dev-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-
+lg);padding:32px 24px;text-align:center;box-shadow:var(--shadow-md);margin-top:24px;}
+.dev-avatar{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--
+primary),var(--primary-dark));margin:0 auto 20px;display:flex;align-items:center;justify-
+content:center;font-size:40px;font-weight:800;color:#0F172A;box-shadow:0 8px 24px var(--
+primary-glow);}
+.dev-name{font-size:28px;font-weight:800;color:var(--text-main);margin-bottom:4px;}
+.dev-role{font-size:14px;font-weight:600;color:var(--primary-dark);margin-
+bottom:16px;background:var(--primary-bg);display:inline-block;padding:4px 12px;border-
+radius:100px;}
+.dev-desc{font-size:15px;color:var(--text-muted);font-weight:500;line-height:1.6;margin-
+bottom:32px;}
+.insta-connect-btn{display:inline-flex;align-items:center;justify-
+content:center;gap:12px;background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743
+50%,#cc2366 75%,#bc1888 100%);color:white;text-decoration:none;font-size:16px;font-
+weight:800;padding:16px 32px;border-radius:100px;width:100%;max-width:300px;transition:all
+0.2s;box-shadow:0 8px 20px rgba(220,39,67,0.3);}
+.insta-connect-btn:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(220,39,67,0.4);}
+.insta-connect-btn svg{width:24px;height:24px;fill:white;}
+.admin-container{max-width:800px;margin:0 auto;width:100%;padding:24px 0
+64px;display:flex;flex-direction:column;gap:24px;}
+.admin-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-
+md);padding:24px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow-sm);}
+.admin-card h3{font-size:18px;font-weight:800;color:var(--text-main);display:flex;align-
+items:center;gap:10px;}
+.admin-card h3 svg{width:22px;height:22px;color:var(--primary-dark);}
+.admin-card .btn-primary{height:48px;font-size:15px;}
+.admin-card input,.admin-card select{height:48px;}
+.admin-manage-list{display:flex;flex-direction:column;gap:10px;max-height:280px;overflow-y:auto;}
+.admin-list-item{display:flex;align-items:center;justify-content:space-between;background:var(--
+bg);border:1px solid var(--border);padding:0 16px;min-height:56px;border-radius:var(--radius-
+sm);font-size:15px;font-weight:600;} .delete-btn{width:36px;height:36px;border-
+radius:50%;background:rgba(239,68,68,0.1);color:#EF4444;border:none;display:flex;align-
+items:center;justify-content:center;cursor:pointer;transition:all 0.2s;}
+.delete-btn:hover{background:#EF4444;color:white;}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);backdrop-
+filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:1000;padding:16px;}
+.modal-overlay.active{display:flex;}
+.modal-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-
+lg);padding:32px;width:100%;max-width:400px;display:flex;flex-direction:column;gap:20px;box-
+shadow:var(--shadow-lg);animation:modalPop 0.2s ease;}
+@keyframes modalPop{from{opacity:0;transform:scale(0.95);}to{opacity:1;transform:scale(1);}}
+.modal-box h3{font-size:22px;font-weight:800;text-align:center;}
+.modal-actions{display:flex;gap:12px;margin-top:8px;}
+.modal-actions button{flex:1;height:48px;border-radius:var(--radius-sm);}
+.btn-secondary{background:var(--bg);color:var(--text-main);border:1px solid var(--border);font-
+size:15px;font-weight:700;cursor:pointer;}
+.btn-secondary:hover{background:var(--border);}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%)
+translateY(150px);background:var(--text-main);color:var(--bg);padding:12px 24px;border-
+radius:100px;font-size:14px;font-weight:700;z-index:9999;transition:transform 0.3s cubic-
+bezier(0.4,0,0.2,1),opacity 0.3s;box-shadow:var(--shadow-lg);white-space:nowrap;opacity:0;pointer-
+events:none;}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1;}
+.toast.error{background:#EF4444;color:white;}
+/* ✅ SMOOTH VIDEO PLAYER */
+.video-overlay{position:fixed;inset:0;background:rgba(9,12,6,0.85);backdrop-filter:blur(10px);z-
+index:2000;display:none;align-items:center;justify-
+content:center;padding:16px;opacity:0;transition:opacity 0.35s ease;}
+.video-overlay.active{display:flex;opacity:1;}
+.video-modal{background:#0F0F0F;border-radius:20px;width:100%;max-
+width:960px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 24px 64px
+rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.1);transform:scale(0.95);transition:transform
+0.35s cubic-bezier(0.34,1.56,0.64,1),opacity 0.3s ease;position:relative;will-change:transform;} .video-overlay.active .video-modal{transform:scale(1);}
+.video-header{display:flex;align-items:center;justify-content:space-between;padding:16px
+20px;background:#1A1A1A;border-bottom:1px solid rgba(255,255,255,0.05);}
+.video-header-title{color:#FFFFFF;font-size:16px;font-weight:700;flex:1;white-
+space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:16px;}
+.video-header-actions{display:flex;align-items:center;gap:8px;}
+.video-action-btn{width:40px;height:40px;border-
+radius:10px;background:rgba(255,255,255,0.08);border:none;color:#FFFFFF;display:flex;align-
+items:center;justify-content:center;cursor:pointer;transition:all 0.2s;}
+.video-action-btn:hover{background:rgba(255,255,255,0.15);}
+.video-action-btn svg{width:20px;height:20px;stroke:currentColor;stroke-width:2;fill:none;stroke-
+linecap:round;stroke-linejoin:round;}
+.video-body-wrapper{position:relative;width:100%;padding-bottom:56.25%;background:#000;}
+.video-body-wrapper
+iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;background:#000;}
+.video-overlay.is-fullscreen{padding:0 !important;background:#000 !important;backdrop-filter:none
+!important;}
+.video-overlay.is-fullscreen .video-modal{max-width:100vw !important;width:100vw
+!important;height:100vh !important;border-radius:0 !important;border:none
+!important;transform:none !important;display:flex;align-items:center;justify-content:center;}
+.video-overlay.is-fullscreen .video-header{position:absolute;top:0;left:0;right:0;z-
+index:10;background:linear-gradient(to
+bottom,rgba(0,0,0,0.8),transparent);border:none;padding:16px 24px;opacity:1;transition:opacity
+0.3s;}
+.video-overlay.is-fullscreen .video-header-title{color:white;}
+.video-overlay.is-fullscreen .video-body-wrapper{padding-bottom:0 !important;width:100vw
+!important;height:100vh !important;display:flex;align-items:center;justify-
+content:center;background:#000;}
+.video-overlay.is-fullscreen .video-body-wrapper iframe{width:100vw !important;height:100vh
+!important;position:absolute;top:0;left:0;}
+@media (max-aspect-ratio:1/1) and (max-width:900px){.video-overlay.is-fullscreen .video-body-
+wrapper iframe{width:100vh !important;height:100vw
+!important;top:50%;left:50%;transform:translate(-50%,-50%) rotate(90deg);}}
+@media (max-width:768px){.video-overlay{padding:12px;}.video-modal{max-width:100%;border-
+radius:16px;}.video-header{padding:12px 16px;}.video-header-title{font-size:14px;}} ::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px;}
+</style>
+</head>
+<body data-color="lime">
+<!-- SPLASH SCREEN -->
+<div id="splash-screen" class="screen active">
+<div class="splash-logo-large">
+<div class="logo-mark">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="#0F172A"/>
+</svg>
+</div>
+<div class="logo-text">AKRAJ</div>
+<div class="splash-subtitle">Your ultimate study companion</div>
+</div>
+</div>
+<!-- AUTH SCREEN -->
+<div id="auth-screen" class="screen" style="padding-bottom: 0;">
+<div class="screen-content">
+<div class="auth-container">
+<div class="akraj-logo" style="margin-bottom: 12px;">
+<div class="logo-mark">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="#0F172A"/>
+</svg> </div>
+<div class="logo-text">AKRAJ</div>
+</div>
+<div class="auth-subtitle">Your ultimate study companion</div>
+<form class="auth-card" id="auth-form">
+<div class="input-group">
+<label class="input-label">Username</label>
+<input type="text" id="auth-username" placeholder="Enter your username" required
+maxlength="30" />
+</div>
+<div class="input-group">
+<label class="input-label">Password</label>
+<input type="password" id="auth-password" placeholder="Enter your password" required
+maxlength="50" />
+</div>
+<button type="submit" class="btn-primary" id="auth-submit-btn">Sign Up</button>
+<div class="auth-toggle" id="auth-toggle-link">Already have account? <span>Login</span></div>
+</form>
+</div>
+</div>
+</div>
+<!-- HOME SCREEN -->
+<div id="home-screen" class="screen">
+<div class="screen-content">
+<header class="app-header" id="home-header">
+<div class="header-left">
+<div class="greeting-text">Welcome back</div>
+<div class="akraj-logo" id="home-logo"> <div class="logo-mark" style="width: 32px; height: 32px; border-radius: 10px;">
+<svg viewBox="0 0 24 24" style="width: 18px; height: 18px;"
+xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="#0F172A"/>
+</svg>
+</div>
+<div class="logo-text" style="font-size: 20px;">AKRAJ</div>
+</div>
+</div>
+<div class="header-right">
+<button class="icon-btn" data-theme-toggle aria-label="Toggle theme"></button>
+<button class="icon-btn" onclick="showScreen('settings-screen'); updateBottomNav('settings')"
+aria-label="Settings">
+<svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65
+1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65
+1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-
+1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-
+1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2
+2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0
+1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2
+0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2
+2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+</button>
+</div>
+</header>
+<main style="flex:1;">
+<div class="welcome-card">
+<div class="welcome-title">Hey there, <span id="welcome-username">Student</span>! 👋</div>
+<div class="welcome-quote">"Success is the sum of small efforts, repeated day in and day out.
+Let's make today count!"</div>
+</div>
+<h2 class="section-header">Your Subjects</h2> <div class="subject-grid" id="subjects-list"></div>
+</main>
+<footer class="app-footer">
+<a class="insta-btn" href="https://instagram.com/_rjrsii" target="_blank" rel="noopener noreferrer">
+<span class="insta-gradient-icon"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0
+3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0
+3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-
+3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-
+3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069
+4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073
+1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072
+4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-
+1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-
+1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-
+2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209
+1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645
+1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></span>
+<span>@_rjrsii</span>
+</a>
+<div class="made-by">Made with <span>❤️</span> by RAJARSI</div>
+</footer>
+</div>
+</div>
+<!-- EXPLORE SCREEN -->
+<div id="explore-screen" class="screen">
+<div class="screen-content">
+<header class="app-header" id="explore-header">
+<div class="header-left">
+<div class="greeting-text">Discover</div>
+<div class="akraj-logo">
+<div class="logo-mark" style="width: 32px; height: 32px; border-radius: 10px;"> <svg viewBox="0 0 24 24" style="width: 18px; height: 18px;"
+xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="#0F172A"/>
+</svg>
+</div>
+<div class="logo-text" style="font-size: 20px;">Explore</div>
+</div>
+</div>
+<div class="header-right">
+<button class="icon-btn" data-theme-toggle aria-label="Toggle theme"></button>
+</div>
+</header>
+<main style="flex:1; padding-top: 24px;">
+<h2 class="section-header">All Subjects</h2>
+<div class="subject-grid" id="explore-subjects-list"></div>
+</main>
+<footer class="app-footer">
+<div class="made-by">Made with <span>❤️</span> by RAJARSI</div>
+</footer>
+</div>
+</div>
+<!-- DEVELOPER SCREEN -->
+<div id="dev-screen" class="screen">
+<div class="screen-content">
+<header class="app-header" id="dev-header">
+<div class="header-left">
+<div class="greeting-text">Meet the Creator</div> <div class="akraj-logo">
+<div class="logo-mark" style="width: 32px; height: 32px; border-radius: 10px;">
+<svg viewBox="0 0 24 24" style="width: 18px; height: 18px;"
+xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="#0F172A"/>
+</svg>
+</div>
+<div class="logo-text" style="font-size: 20px;">Developer</div>
+</div>
+</div>
+<div class="header-right">
+<button class="icon-btn" data-theme-toggle aria-label="Toggle theme"></button>
+</div>
+</header>
+<main style="flex:1; max-width:600px; width:100%; margin:0 auto;">
+<div class="dev-card">
+<div class="dev-avatar">R</div>
+<div class="dev-name">RAJARSI</div>
+<div class="dev-role">Class 10th Student | DAV</div>
+<div class="dev-desc">
+Hi! I'm Rajarsi, a Class 10th student at DAV and the creator of AKRAJ.
+<br><br> I built this platform to make quality study materials easily accessible for every student.
+Let's connect and learn together! 🚀
+</div>
+<a href="https://instagram.com/_rjrsii" target="_blank" rel="noopener noreferrer" class="insta-
+connect-btn">
+<svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691
+4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664
+4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-
+1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-
+4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072 4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2
+4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2
+6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-
+2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162
+6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0
+10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-
+11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-
+1.44-1.439-1.44z"/></svg>
+Connect on Instagram
+</a>
+</div>
+</main>
+<footer class="app-footer">
+<div class="made-by">Made with <span>❤️</span> by RAJARSI</div>
+</footer>
+</div>
+</div>
+<!-- PROFILE SCREEN -->
+<div id="profile-screen" class="screen">
+<div class="screen-content">
+<header class="app-header" id="profile-header">
+<div class="header-left">
+<div class="greeting-text">My Account</div>
+<div class="akraj-logo">
+<div class="logo-mark" style="width: 32px; height: 32px; border-radius: 10px;">
+<svg viewBox="0 0 24 24" style="width: 18px; height: 18px;"
+xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="#0F172A"/>
+</svg>
+</div> <div class="logo-text" style="font-size: 20px;">Profile</div>
+</div>
+</div>
+<div class="header-right">
+<button class="icon-btn" data-theme-toggle aria-label="Toggle theme"></button>
+</div>
+</header>
+<main style="flex:1; max-width:600px; width:100%; margin:0 auto;">
+<div class="profile-header">
+<div class="profile-avatar" id="profile-initial">S</div>
+<div class="profile-name" id="profile-username">Student</div>
+<div class="profile-badge">Class 10th Student</div>
+</div>
+<div class="settings-group">
+<div class="settings-row" style="cursor: pointer;" onclick="showScreen('settings-screen');
+updateBottomNav('settings')">
+<div class="settings-label">
+<svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65
+1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65
+1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-
+1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-
+1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2
+2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0
+1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2
+0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2
+2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+Settings
+</div>
+<svg class="svg-icon" style="width:20px; color: var(--text-muted);" viewBox="0 0 24 24"><path
+d="M9 18l6-6-6-6"/></svg>
+</div> <div class="settings-row" style="cursor: pointer;" onclick="showScreen('dev-screen');
+updateBottomNav('dev')">
+<div class="settings-label">
+<svg class="svg-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4
+4v2"/><circle cx="12" cy="7" r="4"/></svg>
+About Developer
+</div>
+<svg class="svg-icon" style="width:20px; color: var(--text-muted);" viewBox="0 0 24 24"><path
+d="M9 18l6-6-6-6"/></svg>
+</div>
+</div>
+<button class="btn-danger" id="logout-btn">
+<svg class="svg-icon" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+<polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+Log Out
+</button>
+</main>
+<footer class="app-footer">
+<div class="made-by">Made with <span>❤️</span> by RAJARSI</div>
+</footer>
+</div>
+</div>
+<!-- SETTINGS SCREEN -->
+<div id="settings-screen" class="screen">
+<div class="screen-content">
+<header class="app-header" id="settings-header">
+<div class="header-left">
+<div class="greeting-text">Preferences</div>
+<div class="akraj-logo"> <div class="logo-mark" style="width: 32px; height: 32px; border-radius: 10px;">
+<svg viewBox="0 0 24 24" style="width: 18px; height: 18px;"
+xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="#0F172A"/>
+</svg>
+</div>
+<div class="logo-text" style="font-size: 20px;">Settings</div>
+</div>
+</div>
+</header>
+<main style="flex:1; max-width:600px; width:100%; margin:0 auto;">
+<div class="settings-group">
+<div class="settings-row">
+<div class="settings-label">
+<svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+Dark Mode
+</div>
+<button class="icon-btn" data-theme-toggle style="width:36px; height:36px;"></button>
+</div>
+<div class="settings-row" style="flex-direction: column; align-items: flex-start; gap: 16px;">
+<div class="settings-label">
+<svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3
+15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+App Theme Color
+</div>
+<div class="color-picker" id="color-picker-container"></div>
+</div>
+</div>
+</main> <footer class="app-footer">
+<div class="made-by">Made with <span>❤️</span> by RAJARSI</div>
+</footer>
+</div>
+</div>
+<!-- SUBJECT DETAIL SCREEN -->
+<div id="subject-screen" class="screen">
+<div class="screen-content">
+<header class="detail-header" id="subject-detail-header">
+<button class="back-btn" onclick="goBack()">
+<svg class="svg-icon" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+</button>
+<div class="detail-title" id="subject-title">Subject</div>
+<div class="header-spacer"></div>
+</header>
+<main style="flex:1;">
+<div class="list-container" id="chapters-list"></div>
+</main>
+<footer class="app-footer">
+<div class="made-by">Made with <span>❤️</span> by RAJARSI</div>
+</footer>
+</div>
+</div>
+<!-- CHAPTER DETAIL SCREEN -->
+<div id="chapter-screen" class="screen">
+<div class="screen-content"> <header class="detail-header" id="chapter-detail-header">
+<button class="back-btn" onclick="goBack()">
+<svg class="svg-icon" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+</button>
+<div class="detail-title" id="chapter-title">Chapter</div>
+<div class="header-spacer"></div>
+</header>
+<main style="flex:1;">
+<div class="list-container" id="resources-list"></div>
+</main>
+<footer class="app-footer">
+<div class="made-by">Made with <span>❤️</span> by RAJARSI</div>
+</footer>
+</div>
+</div>
+<!-- ADMIN PANEL -->
+<div id="admin-screen" class="screen">
+<div class="screen-content">
+<header class="detail-header" id="admin-header">
+<button class="back-btn" onclick="showScreen('home-screen'); updateBottomNav('home')">
+<svg class="svg-icon" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+</button>
+<div class="detail-title">Admin Panel</div>
+<div class="header-spacer"></div>
+</header>
+<main class="admin-container">
+<div class="admin-card"> <h3><svg class="svg-icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg> Add
+Subject</h3>
+<input type="text" id="add-subject-input" placeholder="Subject Name" maxlength="50" />
+<button class="btn-primary" id="add-subject-btn">Add Subject</button>
+</div>
+<div class="admin-card">
+<h3><svg class="svg-icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-
+2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg> Manage Subjects</h3>
+<div class="admin-manage-list" id="manage-subjects-list"></div>
+</div>
+<div class="admin-card">
+<h3><svg class="svg-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Add
+Chapter</h3>
+<select id="add-chapter-subject"></select>
+<input type="text" id="add-chapter-input" placeholder="Chapter Name" maxlength="80" />
+<button class="btn-primary" id="add-chapter-btn">Add Chapter</button>
+</div>
+<div class="admin-card">
+<h3><svg class="svg-icon" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-
+7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+</svg> Add Resource</h3>
+<select id="add-resource-chapter"></select>
+<select id="add-resource-type">
+<option value="video">Video Lecture</option>
+<option value="pdf">PDF Document</option>
+</select>
+<input type="text" id="add-resource-title" placeholder="Resource Title" maxlength="80" />
+<input type="url" id="add-resource-url" placeholder="YouTube or Drive URL" />
+<button class="btn-primary" id="add-resource-btn">Add Resource</button> </div>
+</main>
+<footer class="app-footer">
+<div class="made-by">Made with <span>❤️</span> by RAJARSI</div>
+</footer>
+</div>
+</div>
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav" id="bottom-nav" style="display: none;">
+<div class="nav-item active" data-nav="home" onclick="switchTab('home')">
+<svg class="svg-icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-
+2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+Home
+</div>
+<div class="nav-item" data-nav="explore" onclick="switchTab('explore')">
+<svg class="svg-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21"
+x2="16.65" y2="16.65"/></svg>
+Explore
+</div>
+<div class="nav-item" data-nav="dev" onclick="switchTab('dev')">
+<svg class="svg-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4
+4v2"/><circle cx="12" cy="7" r="4"/></svg>
+Devs
+</div>
+<div class="nav-item" data-nav="profile" onclick="switchTab('profile')">
+<svg class="svg-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4
+4v2"/><circle cx="12" cy="7" r="4"/></svg>
+Profile
+</div> </nav>
+<!-- IN-APP VIDEO PLAYER MODAL -->
+<div class="video-overlay" id="video-overlay">
+<div class="video-modal" id="video-modal">
+<div class="video-header" id="video-header">
+<div class="video-header-title" id="video-title-display">Video Title</div>
+<div class="video-header-actions">
+<button class="video-action-btn" id="video-fullscreen-btn" title="Fullscreen">
+<svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2
+2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+</button>
+<button class="video-action-btn" id="video-close-btn" title="Close">
+<svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+</button>
+</div>
+</div>
+<div class="video-body-wrapper" id="video-container"></div>
+</div>
+</div>
+<!-- PASSWORD MODAL -->
+<div class="modal-overlay" id="password-modal">
+<div class="modal-box">
+<h3>🔐 Admin Access</h3>
+<input type="password" id="admin-password-input" placeholder="Enter password" />
+<div class="modal-actions">
+<button class="btn-secondary" id="modal-cancel-btn">Cancel</button> <button class="btn-primary" id="modal-submit-btn" style="margin-top:0;">Enter</button>
+</div>
+</div>
+</div>
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+<!-- 🔥 FIREBASE SDK -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, doc, getDocs, addDoc, deleteDoc, query, where, serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+const firebaseConfig = {
+apiKey: "AIzaSyA2z2mkCapAMI9VpwPRCtQdnzniW6ktjVA",
+authDomain: "studuora.firebaseapp.com",
+projectId: "studuora",
+storageBucket: "studuora.firebasestorage.app",
+messagingSenderId: "587098906261",
+appId: "1:587098906261:web:abe23793ea83a2d692859c",
+measurementId: "G-RWL7L06VMR"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+window.FB = { db, collection, doc, getDocs, addDoc, deleteDoc, query, where, serverTimestamp }; window.dispatchEvent(new Event('firebase-ready'));
+console.log("🔥 Firebase ready");
+</script>
+<!-- MAIN SCRIPT -->
+<script>
+/* ============================================================
+AKRAJ — Main Logic (Firebase-powered + Cache for Speed)
+============================================================ */
+const ADMIN_PASSWORD = 'Abcd1234#sss';
+const KEY_USER = 'akraj_user';
+const KEY_THEME = 'akraj_theme';
+const KEY_COLOR = 'akraj_color';
+/* ✅ LOCAL CACHE: App instantly open hoga Firebase ka wait nahi karega */
+const CACHE = {
+subjects: null,
+chapters: null,
+resources: {}
+};
+const DEFAULT_SUBJECTS = [
+{ name: 'Mathematics', iconType: 'math' },
+{ name: 'Science', iconType: 'sci' },
+{ name: 'Social Science', iconType: 'sst' },
+{ name: 'English', iconType: 'eng' },
+{ name: 'Hindi', iconType: 'hin' } ];
+const DEFAULT_CHAPTERS = [
+{ subjName: 'Mathematics', name: 'Chapter 1: Real Numbers' },
+{ subjName: 'Mathematics', name: 'Chapter 2: Polynomials' },
+{ subjName: 'Mathematics', name: 'Chapter 3: Pair of Linear Equations in Two Variables' },
+{ subjName: 'Mathematics', name: 'Chapter 4: Quadratic Equations' },
+{ subjName: 'Mathematics', name: 'Chapter 5: Arithmetic Progressions' },
+{ subjName: 'Mathematics', name: 'Chapter 6: Triangles' },
+{ subjName: 'Mathematics', name: 'Chapter 7: Coordinate Geometry' },
+{ subjName: 'Mathematics', name: 'Chapter 8: Introduction to Trigonometry' },
+{ subjName: 'Mathematics', name: 'Chapter 9: Some Applications of Trigonometry' },
+{ subjName: 'Mathematics', name: 'Chapter 10: Circles' },
+{ subjName: 'Mathematics', name: 'Chapter 11: Areas Related to Circles' },
+{ subjName: 'Mathematics', name: 'Chapter 12: Surface Areas and Volumes' },
+{ subjName: 'Mathematics', name: 'Chapter 13: Statistics' },
+{ subjName: 'Mathematics', name: 'Chapter 14: Probability' },
+{ subjName: 'Science', name: 'Chapter 1: Chemical Reactions and Equations' },
+{ subjName: 'Science', name: 'Chapter 2: Acids, Bases and Salts' },
+{ subjName: 'Science', name: 'Chapter 3: Metals and Non-metals' },
+{ subjName: 'Science', name: 'Chapter 4: Carbon and its Compounds' },
+{ subjName: 'Science', name: 'Chapter 5: Life Processes' },
+{ subjName: 'Science', name: 'Chapter 6: Control and Coordination' },
+{ subjName: 'Science', name: 'Chapter 7: How do Organisms Reproduce?' },
+{ subjName: 'Science', name: 'Chapter 8: Heredity' },
+{ subjName: 'Science', name: 'Chapter 9: Light – Reflection and Refraction' },
+{ subjName: 'Science', name: 'Chapter 10: The Human Eye and the Colourful World' },
+{ subjName: 'Science', name: 'Chapter 11: Electricity' }, { subjName: 'Science', name: 'Chapter 12: Magnetic Effects of Electric Current' },
+{ subjName: 'Science', name: 'Chapter 13: Our Environment' },
+{ subjName: 'Social Science', name: 'Chapter 1: History - The Rise of Nationalism in Europe' },
+{ subjName: 'Social Science', name: 'Chapter 2: History - Nationalism in India' },
+{ subjName: 'Social Science', name: 'Chapter 3: History - The Making of a Global World' },
+{ subjName: 'Social Science', name: 'Chapter 4: Geography - Resources and Development' },
+{ subjName: 'Social Science', name: 'Chapter 5: Geography - Forest and Wildlife Resources' },
+{ subjName: 'Social Science', name: 'Chapter 6: Geography - Water Resources' },
+{ subjName: 'Social Science', name: 'Chapter 7: Civics - Power Sharing' },
+{ subjName: 'Social Science', name: 'Chapter 8: Civics - Federalism' },
+{ subjName: 'Social Science', name: 'Chapter 9: Civics - Gender, Religion and Caste' },
+{ subjName: 'Social Science', name: 'Chapter 10: Economics - Development' },
+{ subjName: 'Social Science', name: 'Chapter 11: Economics - Sectors of the Indian Economy' },
+{ subjName: 'English', name: 'Chapter 1: First Flight - A Letter to God' },
+{ subjName: 'English', name: 'Chapter 2: First Flight - Nelson Mandela: Long Walk to Freedom' },
+{ subjName: 'English', name: 'Chapter 3: First Flight - Two Stories about Flying' },
+{ subjName: 'English', name: 'Chapter 4: First Flight - From the Diary of Anne Frank' },
+{ subjName: 'English', name: 'Chapter 5: First Flight - Glimpses of India' },
+{ subjName: 'English', name: 'Chapter 6: Footprints without Feet - A Triumph of Surgery' },
+{ subjName: 'English', name: 'Chapter 7: Footprints without Feet - The Thief\'s Story' },
+{ subjName: 'Hindi', name: 'Chapter 1: क्षि ति ज - सूरदा स के पद' },
+{ subjName: 'Hindi', name: 'Chapter 2: क्षि ति ज - तुलसी दा स (रा म-लक्ष्मण-परशुरा म संवा द)' },
+{ subjName: 'Hindi', name: 'Chapter 3: क्षि ति ज - जयशंकर प्रसा द (आत्मकथ्य)' },
+{ subjName: 'Hindi', name: 'Chapter 4: क्षि ति ज - सूर्यकां त त्रि पा ठी नि रा ला (उत्सा ह)' },
+{ subjName: 'Hindi', name: 'Chapter 5: कृति का - मा ता का अँचल' },
+{ subjName: 'Hindi', name: 'Chapter 6: कृति का - जॉ र्ज पंचम की ना क' }
+]; const SVG_ICONS = {
+math: `<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+stroke-linejoin="round" fill="none"><path d="M4 19h16M4 5h16M9 12h6M12 9v6"/></svg>`,
+sci: `<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+stroke-linejoin="round" fill="none"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0
+.9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path
+d="M7 16h10"/></svg>`,
+sst: `<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+stroke-linejoin="round" fill="none"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1
+4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/>
+</svg>`,
+eng: `<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+stroke-linejoin="round" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5
+2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
+hin: `<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+stroke-linejoin="round" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+</svg>`,
+default: `<svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+stroke-linejoin="round" fill="none"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path
+d="M12 8h.01"/></svg>`
+};
+const SUB_COLORS = {
+math: { bg: 'rgba(22, 163, 74, 0.1)', color: '#16A34A' },
+sci: { bg: 'rgba(37, 99, 235, 0.1)', color: '#2563EB' },
+sst: { bg: 'rgba(234, 88, 12, 0.1)', color: '#EA580C' },
+eng: { bg: 'rgba(124, 58, 237, 0.1)', color: '#7C3AED' },
+hin: { bg: 'rgba(220, 38, 38, 0.1)', color: '#DC2626' },
+default: { bg: 'var(--primary-bg)', color: 'var(--primary-dark)' }
+};
+const THEME_COLORS = [
+{ id: 'golden', name: 'Golden Yellow', hex: '#D4AF37' },
+{ id: 'mint', name: 'Mint Green', hex: '#B7E4C7' },
+{ id: 'sky', name: 'Sky Blue', hex: '#A8DADC' }, { id: 'lavender', name: 'Lavender', hex: '#CDB4DB' },
+{ id: 'babypink', name: 'Baby Pink', hex: '#FFC8DD' },
+{ id: 'peach', name: 'Peach', hex: '#F4A261' },
+{ id: 'forest', name: 'Forest Green', hex: '#2D6A4F' },
+{ id: 'teal', name: 'Teal Blue', hex: '#264653' },
+{ id: 'sage', name: 'Sage Cream', hex: '#E9EDC9' },
+{ id: 'coral', name: 'Coral', hex: '#E76F51' }
+];
+let currentSubjectId = null;
+let currentChapterId = null;
+let currentScreenBeforeDetail = 'home';
+let authMode = 'signup';
+let logoClickCount = 0;
+let logoClickResetTimer = null;
+let currentVideoIframe = null;
+let isFullscreen = false;
+let CHAPTER_COUNTS = {};
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => document.querySelectorAll(sel);
+/* ---------- NAVIGATION ---------- */
+function showScreen(id) {
+$$('.screen').forEach(s => s.classList.remove('active'));
+const el = document.getElementById(id);
+if (el) el.classList.add('active'); window.scrollTo(0, 0);
+if (['home-screen','explore-screen','dev-screen','profile-screen','settings-screen'].includes(id)) {
+$('#bottom-nav').style.display = 'flex';
+} else {
+$('#bottom-nav').style.display = 'none';
+}
+}
+function updateBottomNav(tabName) {
+$$('.nav-item').forEach(item => item.classList.toggle('active', item.getAttribute('data-nav') ===
+tabName));
+}
+function switchTab(tab) {
+if (tab === 'home') { renderHome(); showScreen('home-screen'); }
+else if (tab === 'explore') { renderExplore(); showScreen('explore-screen'); }
+else if (tab === 'dev') { showScreen('dev-screen'); }
+else if (tab === 'profile') { renderProfile(); showScreen('profile-screen'); }
+else if (tab === 'settings') { showScreen('settings-screen'); }
+updateBottomNav(tab);
+}
+function goBack() {
+if (currentScreenBeforeDetail === 'explore') switchTab('explore');
+else switchTab('home');
+}
+/* ---------- TOAST ---------- */
+let toastTimer = null;
+function showToast(msg, isError = false) {
+const toast = $('#toast'); toast.textContent = msg;
+toast.className = 'toast show' + (isError ? ' error' : '');
+clearTimeout(toastTimer);
+toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+}
+/* ---------- THEME ---------- */
+function applyTheme(theme) {
+document.documentElement.setAttribute('data-theme', theme);
+const icons = {
+light: `<svg class="svg-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0
+21 12.79z"/></svg>`,
+dark: `<svg class="svg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12
+1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-
+1.42M18.36 5.64l1.42-1.42"/></svg>`
+};
+$$('[data-theme-toggle]').forEach(btn => btn.innerHTML = theme === 'dark' ? icons.dark :
+icons.light);
+}
+function toggleTheme() {
+const current = document.documentElement.getAttribute('data-theme') || 'light';
+const next = current === 'dark' ? 'light' : 'dark';
+localStorage.setItem(KEY_THEME, next);
+applyTheme(next);
+}
+function renderColorPicker() {
+const container = $('#color-picker-container');
+if (!container) return;
+container.innerHTML = THEME_COLORS.map(c => {
+const active = document.body.getAttribute('data-color') === c.id ? 'active' : ''; return `<div class="color-dot ${active}" data-color-val="${c.id}" title="${c.name}"
+style="background:${c.hex};"></div>`;
+}).join('');
+container.querySelectorAll('.color-dot').forEach(dot => {
+dot.addEventListener('click', function() {
+setAppColor(this.getAttribute('data-color-val'));
+});
+});
+}
+function setAppColor(colorId) {
+document.body.setAttribute('data-color', colorId);
+localStorage.setItem(KEY_COLOR, colorId);
+$$('.color-dot').forEach(dot => dot.classList.toggle('active', dot.getAttribute('data-color-val') ===
+colorId));
+showToast('Theme color updated!');
+}
+/* ---------- USER ---------- */
+const loadJSON = (key, fallback) => {
+try { const v = JSON.parse(localStorage.getItem(key)); return v !== null ? v : fallback; }
+catch { return fallback; }
+};
+const saveJSON = (key, val) => localStorage.setItem(key, JSON.stringify(val));
+const getUser = () => loadJSON(KEY_USER, null);
+/* ---------- FIREBASE DATA LAYER (With Cache) ---------- */
+async function fbGetSubjects(force = false) {
+if (CACHE.subjects && !force) return CACHE.subjects;
+const snap = await window.FB.getDocs(window.FB.collection(window.FB.db, "subjects")); const list = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+list.sort((a,b) => (a.name||'').localeCompare(b.name||''));
+CACHE.subjects = list;
+return list;
+}
+async function fbAddSubject(name, iconType='default') {
+const ref = await window.FB.addDoc(window.FB.collection(window.FB.db, "subjects"), {
+name, iconType, createdAt: window.FB.serverTimestamp()
+});
+CACHE.subjects = null; // ✅ Clear cache so it fetches fresh next time
+return ref.id;
+}
+async function fbDeleteSubject(subjectId) {
+const chs = await fbGetChapters(subjectId);
+for (const ch of chs) {
+const rs = await fbGetResources(ch.id);
+for (const r of rs) await window.FB.deleteDoc(window.FB.doc(window.FB.db, "resources", r.id));
+await window.FB.deleteDoc(window.FB.doc(window.FB.db, "chapters", ch.id));
+}
+await window.FB.deleteDoc(window.FB.doc(window.FB.db, "subjects", subjectId));
+CACHE.subjects = null;
+CACHE.chapters = null;
+CACHE.resources = {};
+}
+async function fbGetChapters(subjectId=null, force = false) { if (!subjectId && CACHE.chapters && !force) {
+return CACHE.chapters;
+}
+if (subjectId) {
+// Fetch specific chapters directly if not found in cache
+let q = window.FB.query(window.FB.collection(window.FB.db, "chapters"),
+window.FB.where("subjectId","==",subjectId));
+const snap = await window.FB.getDocs(q);
+const list = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+list.sort((a, b) => {
+const numA = extractChapterNum(a.name);
+const numB = extractChapterNum(b.name);
+if (numA !== numB) return numA - numB;
+return (a.name || '').localeCompare(b.name || '');
+});
+return list;
+}
+let q = window.FB.collection(window.FB.db, "chapters");
+const snap = await window.FB.getDocs(q);
+const list = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+list.sort((a, b) => {
+const numA = extractChapterNum(a.name);
+const numB = extractChapterNum(b.name);
+if (numA !== numB) return numA - numB;
+return (a.name || '').localeCompare(b.name || '');
+});
+CACHE.chapters = list;
+return list; }
+function extractChapterNum(name) {
+if (!name) return 9999;
+const m = name.match(/chapter\s*(\d+)/i);
+if (m) return parseInt(m[1], 10);
+const m2 = name.match(/^(\d+)[\.\:\s]/);
+if (m2) return parseInt(m2[1], 10);
+return 9999;
+}
+async function fbAddChapter(subjectId, name) {
+const ref = await window.FB.addDoc(window.FB.collection(window.FB.db, "chapters"), {
+subjectId, name, createdAt: window.FB.serverTimestamp()
+});
+CACHE.chapters = null; // ✅ Clear cache
+return ref.id;
+}
+async function fbGetResources(chapterId=null, force = false) {
+if (chapterId) {
+if (CACHE.resources[chapterId] && !force) return CACHE.resources[chapterId];
+let q = window.FB.query(window.FB.collection(window.FB.db, "resources"),
+window.FB.where("chapterId","==",chapterId));
+const snap = await window.FB.getDocs(q);
+const list = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+CACHE.resources[chapterId] = list;
+return list; }
+let q = window.FB.collection(window.FB.db, "resources");
+const snap = await window.FB.getDocs(q);
+return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+}
+async function fbAddResource(chapterId, type, title, url) {
+const ref = await window.FB.addDoc(window.FB.collection(window.FB.db, "resources"), {
+chapterId, type, title, url, createdAt: window.FB.serverTimestamp()
+});
+CACHE.resources[chapterId] = null; // ✅ Clear cache
+return ref.id;
+}
+async function refreshChapterCounts() {
+const all = await fbGetChapters();
+const counts = {};
+all.forEach(c => { counts[c.subjectId] = (counts[c.subjectId] || 0) + 1; });
+CHAPTER_COUNTS = counts;
+}
+/* ---------- AUTO SEED ---------- */
+async function seedIfEmpty() {
+const subs = await fbGetSubjects(true); // Force fetch to check
+if (subs.length > 0) { console.log("📚 Firestore has data, skip seeding"); return; }
+console.log("🌱 Seeding default data...");
+const map = {};
+for (const ds of DEFAULT_SUBJECTS) { const id = await fbAddSubject(ds.name, ds.iconType);
+map[ds.name] = id;
+}
+for (const dc of DEFAULT_CHAPTERS) {
+if (map[dc.subjName]) await fbAddChapter(map[dc.subjName], dc.name);
+}
+console.log("✅ Seeding complete!");
+}
+/* ---------- EXTRACTORS ---------- */
+const extractYT = (url) => {
+const m = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
+return m ? m[1] : null;
+};
+const extractDrive = (url) => {
+let m = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+if (m) return m[1];
+m = url.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+return m ? m[1] : null;
+};
+/* ---------- INIT ---------- */
+function initApp() {
+const savedTheme = localStorage.getItem(KEY_THEME) || 'light';
+const savedColor = localStorage.getItem(KEY_COLOR) || 'lime';
+applyTheme(savedTheme);
+document.body.setAttribute('data-color', savedColor);
+renderColorPicker(); const start = async () => {
+try { await seedIfEmpty(); }
+catch (e) { console.error("Seed error:", e); }
+setTimeout(() => {
+if (getUser()) { renderHome(); switchTab('home'); }
+else { showScreen('auth-screen'); }
+}, 400);
+};
+if (window.FB) start();
+else window.addEventListener('firebase-ready', start, { once: true });
+}
+/* ---------- AUTH ---------- */
+$('#auth-toggle-link').addEventListener('click', () => {
+authMode = authMode === 'signup' ? 'login' : 'signup';
+$('#auth-submit-btn').textContent = authMode === 'signup' ? 'Sign Up' : 'Login';
+$('#auth-toggle-link').innerHTML = authMode === 'signup'
+? 'Already have account? <span>Login</span>'
+: "Don't have account? <span>Sign Up</span>";
+});
+$('#auth-form').addEventListener('submit', (e) => {
+e.preventDefault();
+const user = $('#auth-username').value.trim();
+const pass = $('#auth-password').value;
+if (!user || !pass) return showToast('Fill all fields', true);
+if (authMode === 'signup' && pass.length < 4) return showToast('Password too short', true);
+if (authMode === 'login') { const existing = getUser();
+if (!existing || existing.username !== user) return showToast('User not found', true);
+}
+saveJSON(KEY_USER, { username: user });
+showToast(authMode === 'signup' ? 'Account created! 🎉' : 'Welcome back! 👋');
+setTimeout(() => { renderHome(); switchTab('home'); }, 500);
+});
+$('#logout-btn').addEventListener('click', () => {
+if (confirm('Are you sure you want to log out?')) {
+localStorage.removeItem(KEY_USER);
+showToast('Logged out');
+setTimeout(() => {
+$('#auth-username').value = '';
+$('#auth-password').value = '';
+showScreen('auth-screen');
+}, 500);
+}
+});
+/* ---------- HOME (Instant Open) ---------- */
+async function renderHome() {
+const user = getUser();
+if (user) $('#welcome-username').textContent = user.username;
+const list = $('#subjects-list');
+// If cache exists, render it instantly without loading spinner!
+if (CACHE.subjects && CACHE.chapters) {
+list.innerHTML = '';
+await refreshChapterCounts(); CACHE.subjects.forEach(sub => list.appendChild(createSubjectCard(sub)));
+// Refresh silently in background
+refreshDataSilently('home');
+return;
+}
+// First time load spinner
+list.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--text-
+muted);">Loading...</div>';
+try {
+const subjects = await fbGetSubjects();
+await refreshChapterCounts();
+list.innerHTML = '';
+if (!subjects.length) {
+list.innerHTML = `<div class="empty-state" style="grid-column:1/-1;">No subjects yet</div>`;
+return;
+}
+subjects.forEach(sub => list.appendChild(createSubjectCard(sub)));
+} catch(e) {
+console.error(e);
+list.innerHTML = `<div class="empty-state" style="grid-column:1/-1;">Error loading. Check network.
+</div>`;
+}
+}
+async function refreshDataSilently(screen) {
+try {
+await fbGetSubjects(true);
+await fbGetChapters(null, true); if (screen === 'home') renderHomeUIFromCache();
+if (screen === 'explore') renderExploreUIFromCache();
+} catch(e) {}
+}
+function renderHomeUIFromCache() {
+const list = $('#subjects-list');
+if(!CACHE.subjects) return;
+list.innerHTML = '';
+refreshChapterCounts().then(() => {
+CACHE.subjects.forEach(sub => list.appendChild(createSubjectCard(sub)));
+});
+}
+function renderExploreUIFromCache() {
+const list = $('#explore-subjects-list');
+if(!CACHE.subjects) return;
+list.innerHTML = '';
+refreshChapterCounts().then(() => {
+CACHE.subjects.forEach(sub => list.appendChild(createSubjectCard(sub)));
+});
+}
+/* ---------- EXPLORE (Instant Open) ---------- */
+async function renderExplore() {
+const list = $('#explore-subjects-list');
+if (CACHE.subjects && CACHE.chapters) {
+list.innerHTML = '';
+await refreshChapterCounts(); CACHE.subjects.forEach(sub => list.appendChild(createSubjectCard(sub)));
+refreshDataSilently('explore');
+return;
+}
+list.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--text-
+muted);">Loading...</div>';
+try {
+const subjects = await fbGetSubjects();
+await refreshChapterCounts();
+list.innerHTML = '';
+if (!subjects.length) {
+list.innerHTML = `<div class="empty-state" style="grid-column:1/-1;">No subjects yet</div>`;
+return;
+}
+subjects.forEach(sub => list.appendChild(createSubjectCard(sub)));
+} catch(e) {
+console.error(e);
+list.innerHTML = `<div class="empty-state" style="grid-column:1/-1;">Error loading</div>`;
+}
+}
+function createSubjectCard(sub) {
+const count = CHAPTER_COUNTS[sub.id] ?? 0;
+const card = document.createElement('div');
+card.className = 'subject-card';
+const iconType = sub.iconType || 'default';
+const iconSvg = SVG_ICONS[iconType] || SVG_ICONS.default; const colors = SUB_COLORS[iconType] || SUB_COLORS.default;
+card.innerHTML = `
+<div class="subject-icon-box" style="background:${colors.bg};color:${colors.color};">${iconSvg}
+</div>
+<div class="subject-name">${sub.name}</div>
+<div class="subject-chapters">
+<svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path
+d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+${count} Chapters
+</div>`;
+card.addEventListener('click', () => openSubject(sub.id));
+return card;
+}
+/* ---------- SUBJECT DETAIL ---------- */
+async function openSubject(id) {
+const activeScreen = document.querySelector('.screen.active').id;
+currentScreenBeforeDetail = activeScreen === 'explore-screen' ? 'explore' : 'home';
+currentSubjectId = id;
+const subjects = await fbGetSubjects();
+const sub = subjects.find(s => s.id === id);
+if (!sub) return;
+$('#subject-title').textContent = sub.name;
+const list = $('#chapters-list');
+// Instant load if cached
+if (CACHE.chapters) {
+const chapters = CACHE.chapters.filter(c => c.subjectId === id);
+list.innerHTML = ''; if (!chapters.length) list.innerHTML = `<div class="empty-state">No chapters yet</div>`;
+else {
+chapters.forEach((ch, i) => {
+setTimeout(() => {
+const card = document.createElement('div');
+card.className = 'list-card';
+card.innerHTML = `
+<div class="list-icon-box" style="background:var(--primary-bg);color:var(--primary-dark);">
+<svg class="svg-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path
+d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+</div>
+<div class="list-content">
+<div class="list-title">${ch.name}</div>
+<div class="list-subtitle">Tap to view resources</div>
+</div>
+<div class="list-arrow"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></div>`;
+card.addEventListener('click', () => openChapter(ch.id));
+list.appendChild(card);
+}, i * 20); // Stagger animation
+});
+}
+showScreen('subject-screen');
+return;
+}
+// Fetch fresh
+list.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted);">Loading...
+</div>'; const chapters = await fbGetChapters(id);
+list.innerHTML = '';
+if (!chapters.length) {
+list.innerHTML = `<div class="empty-state">No chapters yet</div>`;
+} else {
+chapters.forEach((ch, i) => {
+const card = document.createElement('div');
+card.className = 'list-card';
+card.innerHTML = `
+<div class="list-icon-box" style="background:var(--primary-bg);color:var(--primary-dark);">
+<svg class="svg-icon" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path
+d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+</div>
+<div class="list-content">
+<div class="list-title">${ch.name}</div>
+<div class="list-subtitle">Tap to view resources</div>
+</div>
+<div class="list-arrow"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></div>`;
+card.addEventListener('click', () => openChapter(ch.id));
+list.appendChild(card);
+});
+}
+showScreen('subject-screen');
+}
+/* ---------- CHAPTER DETAIL ---------- */
+async function openChapter(id) {
+currentChapterId = id; const chapters = await fbGetChapters();
+const ch = chapters.find(c => c.id === id);
+if (!ch) return;
+$('#chapter-title').textContent = ch.name;
+const list = $('#resources-list');
+// Instant load if cached
+if (CACHE.resources[id]) {
+const res = CACHE.resources[id];
+list.innerHTML = '';
+if (!res.length) list.innerHTML = `<div class="empty-state">No resources yet</div>`;
+else {
+res.forEach(r => {
+const isVid = r.type === 'video';
+const iconSvg = isVid
+? `<svg class="svg-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>`
+: `<svg class="svg-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2
+2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`;
+const bgStyle = isVid ? 'background:rgba(16,185,129,0.1);color:#10B981;' :
+'background:rgba(239,68,68,0.1);color:#EF4444;';
+const subText = isVid ? 'Video Lecture' : 'PDF Document';
+const card = document.createElement('div');
+card.className = 'list-card';
+card.innerHTML = `
+<div class="list-icon-box" style="${bgStyle}">${iconSvg}</div>
+<div class="list-content">
+<div class="list-title">${r.title}</div>
+<div class="list-subtitle">${subText}</div>
+</div> <div class="list-arrow"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></div>`;
+card.addEventListener('click', () => openResource(r));
+list.appendChild(card);
+});
+}
+showScreen('chapter-screen');
+return;
+}
+list.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted);">Loading...
+</div>';
+const res = await fbGetResources(id);
+list.innerHTML = '';
+if (!res.length) {
+list.innerHTML = `<div class="empty-state">No resources yet</div>`;
+} else {
+res.forEach(r => {
+const isVid = r.type === 'video';
+const iconSvg = isVid
+? `<svg class="svg-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>`
+: `<svg class="svg-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2
+2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`;
+const bgStyle = isVid ? 'background:rgba(16,185,129,0.1);color:#10B981;' :
+'background:rgba(239,68,68,0.1);color:#EF4444;';
+const subText = isVid ? 'Video Lecture' : 'PDF Document';
+const card = document.createElement('div');
+card.className = 'list-card';
+card.innerHTML = `
+<div class="list-icon-box" style="${bgStyle}">${iconSvg}</div> <div class="list-content">
+<div class="list-title">${r.title}</div>
+<div class="list-subtitle">${subText}</div>
+</div>
+<div class="list-arrow"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
+stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></div>`;
+card.addEventListener('click', () => openResource(r));
+list.appendChild(card);
+});
+}
+showScreen('chapter-screen');
+}
+/* ---------- OPEN RESOURCE — YouTube logo fix ---------- */
+function openResource(res) {
+if (res.type === 'video') {
+const vid = extractYT(res.url);
+if (!vid) return window.open(res.url, '_blank');
+$('#video-title-display').textContent = res.title;
+const container = $('#video-container');
+container.innerHTML = '';
+const iframe = document.createElement('iframe');
+iframe.src = `https://www.youtube.com/embed/${vid}?
+autoplay=1&rel=0&modestbranding=1&showinfo=0&controls=1&playsinline=1&iv_load_policy=3&fs=1`;
+iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-
+picture; web-share";
+iframe.allowFullscreen = true;
+container.appendChild(iframe);
+currentVideoIframe = iframe; $('#video-overlay').classList.add('active');
+document.body.style.overflow = 'hidden';
+} else {
+const drv = extractDrive(res.url);
+window.open(drv ? `https://drive.google.com/file/d/${drv}/view` : res.url, '_blank');
+}
+}
+function closeVideo() {
+const overlay = $('#video-overlay');
+if (!overlay.classList.contains('active')) return;
+if (isFullscreen) exitCustomFullscreen();
+overlay.classList.remove('active');
+document.body.style.overflow = '';
+setTimeout(() => { $('#video-container').innerHTML = ''; currentVideoIframe = null; }, 350);
+}
+function enterCustomFullscreen() {
+const overlay = $('#video-overlay');
+overlay.classList.add('is-fullscreen');
+isFullscreen = true;
+const modal = $('#video-modal');
+if (modal.requestFullscreen) modal.requestFullscreen().catch(()=>{});
+else if (modal.webkitRequestFullscreen) modal.webkitRequestFullscreen();
+if (screen.orientation && screen.orientation.lock) {
+screen.orientation.lock('landscape').catch(()=>{});
+}
+$('#video-fullscreen-btn').innerHTML = `<svg viewBox="0 0 24 24"><path d="M8 3v3a2 2 0 0 1-2
+2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/></svg>`;
+} function exitCustomFullscreen() {
+const overlay = $('#video-overlay');
+overlay.classList.remove('is-fullscreen');
+isFullscreen = false;
+if (document.fullscreenElement) {
+if (document.exitFullscreen) document.exitFullscreen();
+else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+}
+if (screen.orientation && screen.orientation.unlock) screen.orientation.unlock();
+$('#video-fullscreen-btn').innerHTML = `<svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2
+2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>`;
+}
+function toggleFullscreen() { isFullscreen ? exitCustomFullscreen() : enterCustomFullscreen(); }
+document.addEventListener('fullscreenchange', () => {
+if (!document.fullscreenElement && isFullscreen) exitCustomFullscreen();
+});
+$('#video-close-btn').addEventListener('click', closeVideo);
+$('#video-fullscreen-btn').addEventListener('click', toggleFullscreen);
+$('#video-overlay').addEventListener('click', (e) => { if (e.target === $('#video-overlay') &&
+!isFullscreen) closeVideo(); });
+/* ---------- PROFILE ---------- */
+function renderProfile() {
+const user = getUser();
+if (user) {
+$('#profile-username').textContent = user.username;
+$('#profile-initial').textContent = user.username.charAt(0).toUpperCase();
+}
+} /* ---------- ADMIN ACCESS ---------- */
+$('#home-logo').addEventListener('click', () => {
+logoClickCount++;
+clearTimeout(logoClickResetTimer);
+logoClickResetTimer = setTimeout(() => logoClickCount = 0, 2000);
+if (logoClickCount >= 25) {
+logoClickCount = 0;
+showToast('🔓 Unlocking Admin...');
+setTimeout(() => {
+$('#admin-password-input').value = '';
+$('#password-modal').classList.add('active');
+}, 500);
+}
+});
+$('#modal-cancel-btn').addEventListener('click', () => $('#password-
+modal').classList.remove('active'));
+$('#modal-submit-btn').addEventListener('click', async () => {
+const pwd = $('#admin-password-input').value;
+if (pwd === ADMIN_PASSWORD) {
+$('#password-modal').classList.remove('active');
+await renderAdmin();
+showScreen('admin-screen');
+$('#bottom-nav').style.display = 'none';
+showToast('🔓 Admin unlocked!');
+} else {
+$('#password-modal').classList.remove('active'); showToast('❌ Wrong password', true);
+}
+});
+/* ---------- ADMIN PANEL ---------- */
+async function renderAdmin() {
+const subs = await fbGetSubjects(true);
+const chaps = await fbGetChapters(null, true);
+const list = $('#manage-subjects-list');
+list.innerHTML = subs.length ? '' : '<div style="font-size:14px;color:var(--text-muted);">No subjects.
+</div>';
+subs.forEach(s => {
+const div = document.createElement('div');
+div.className = 'admin-list-item';
+div.innerHTML = `<span>${s.name}</span>`;
+const btn = document.createElement('button');
+btn.className = 'delete-btn';
+btn.innerHTML = `<svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/>
+</svg>`;
+btn.onclick = async () => {
+if (confirm(`Delete "${s.name}"? All chapters & resources will be removed.`)) {
+await fbDeleteSubject(s.id);
+await renderAdmin();
+await refreshChapterCounts();
+renderHome();
+showToast('Subject deleted');
+}
+};
+div.appendChild(btn); list.appendChild(div);
+});
+const subSel = $('#add-chapter-subject');
+subSel.innerHTML = '<option value="">Select Subject</option>' + subs.map(s => `<option
+value="${s.id}">${s.name}</option>`).join('');
+const chSel = $('#add-resource-chapter');
+chSel.innerHTML = '<option value="">Select Chapter</option>' + chaps.map(c => {
+const sub = subs.find(s => s.id === c.subjectId);
+return `<option value="${c.id}">${sub ? sub.name : '?'} → ${c.name}</option>`;
+}).join('');
+}
+$('#add-subject-btn').addEventListener('click', async () => {
+const val = $('#add-subject-input').value.trim();
+if (!val) return showToast('Enter name', true);
+const subs = await fbGetSubjects();
+if (subs.some(s => s.name.toLowerCase() === val.toLowerCase())) return showToast('Already
+exists', true);
+try {
+await fbAddSubject(val, 'default');
+$('#add-subject-input').value = '';
+await renderAdmin();
+await refreshChapterCounts();
+renderHome();
+showToast('✅ Subject added!');
+} catch(e) { console.error(e); showToast('❌ Failed. Check rules', true); }
+});
+$('#add-chapter-btn').addEventListener('click', async () => { const subId = $('#add-chapter-subject').value;
+const val = $('#add-chapter-input').value.trim();
+if (!subId || !val) return showToast('Select subject & enter name', true);
+try {
+await fbAddChapter(subId, val);
+$('#add-chapter-input').value = '';
+await renderAdmin();
+await refreshChapterCounts();
+showToast('✅ Chapter added!');
+} catch(e) { console.error(e); showToast('❌ Failed', true); }
+});
+$('#add-resource-btn').addEventListener('click', async () => {
+const chId = $('#add-resource-chapter').value;
+const type = $('#add-resource-type').value;
+const title = $('#add-resource-title').value.trim();
+const url = $('#add-resource-url').value.trim();
+if (!chId || !title || !url) return showToast('Fill all fields', true);
+if (type === 'video' && !extractYT(url)) return alert('Invalid YouTube link');
+if (type === 'pdf' && !extractDrive(url)) return alert('Invalid Drive link');
+try {
+await fbAddResource(chId, type, title, url);
+$('#add-resource-title').value = '';
+$('#add-resource-url').value = '';
+showToast('✅ Resource added! Sabko dikhega!');
+} catch(e) { console.error(e); showToast('❌ Failed', true); }
+}); /* ---------- GLOBAL THEME TOGGLE ---------- */
+document.addEventListener('click', (e) => {
+if (e.target.closest('[data-theme-toggle]')) toggleTheme();
+});
+/* ---------- START ---------- */
+initApp();
+</script>
+</body>
+</html>
